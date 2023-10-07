@@ -1,0 +1,67 @@
+.darkmode-switch {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  border-radius: 64px;
+
+  --dark-cover: #2563eb;
+  --darkmode-icon: #eab308;
+  
+  --light-cover: #1e293b;
+  --lightmode-icon: #eab308;
+
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.darkmode-switch .cover {
+  background-color: var(--dark-cover);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  transition: 0.5s ease-in-out;
+}
+
+.darkmode-switch .darkmode-checkbox {
+  opacity: 0;
+}
+
+.darkmode-switch .darkmode-checkbox:checked ~ .cover {
+  background-color: var(--light-cover);
+}
+
+.darkmode-switch .darkmode-checkbox:checked ~ .darkmode-icon {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+.darkmode-switch .darkmode-checkbox:checked ~ .lightmode-icon {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.darkmode-switch .darkmode-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 6px;
+  fill: var(--darkmode-icon);
+  transition: 0.5s;
+}
+
+.darkmode-switch .lightmode-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 6px;
+  fill: var(--lightmode-icon);
+  transition: 0.5s;
+  opacity: 0;
+}
